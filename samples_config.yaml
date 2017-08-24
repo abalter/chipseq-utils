@@ -1,0 +1,39 @@
+Directories:
+    project: &project 
+        basedir: somepath/projs/client_160630
+        local: ""
+    results: &results 
+        basedir: somepath/projs/client_160630/results
+        local: ""
+    bam:
+        <<: *results
+        local: bam
+    bed:
+        <<: *results
+        local: bed
+    peaks:
+        <<: *results
+        local: peaks
+    coverage:
+        <<: *results
+        local: coverage
+    intersects:
+        <<: *results
+        local: peaks/intersects
+    commandfiles:
+        <<: *project
+        local: code
+    condor: 
+        <<: *project
+        local: code/condor
+    configlogfileds:
+        <<: *project
+        local: code/configlogs
+Samples:
+    treatments: [JQ1]
+    targets: [BRD4]
+    reps: [A,B]
+    mockname: mock
+    inputname: input
+    peak_tag: _peaks.bed
+

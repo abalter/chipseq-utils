@@ -1,0 +1,17 @@
+# macs2_gappedPeak_fields
+1	#chr
+2	start
+3	stop
+4	name	# ?
+5	score	# 10*-log10qvalue
+6	strand	# [	.|+\-]
+7	narrow_start
+8	narrow_end
+9	color	# set to 0
+10	blocks	# how many blocks including the starting 1bp and ending 1bp of broad regions
+11	block_length	# length of each blocks
+12	block_starts	# starts of each blocks
+13	fold_change	# raw?
+14	-log10p
+15	-log10q
+awk -v ORS="\t" 'NR>1 && NR<17{print $2}' macs2_gappedPeak_fields

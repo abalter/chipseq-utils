@@ -1,0 +1,42 @@
+Directories:
+    project: &project 
+        basedir: somepath/projs/client_160614
+        local: ""
+    results: &results 
+        basedir: somepath/projs/client_160614/results
+        local: ""
+    bam:
+        <<: *results
+        local: bam
+    bed:
+        <<: *results
+        local: bed
+    peaks:
+        <<: *results
+        local: peaks
+    coverage:
+        basedir: somepath/users/balter/chipseq_test
+        local: coverage
+    intersects:
+        basedir: somepath/users/balter/chipseq_test
+        local: peaks/intersects
+    commandfiles:
+        basedir: somepath/users/balter/chipseq_test
+        local: code
+    condor: 
+        basedir: somepath/users/balter/chipseq_test
+        local: code/condor
+    configlogfileds:
+        basedir: somepath/users/balter/chipseq_test
+        local: code/configlogs
+Samples:
+    treatments: [SP]
+    targets: [lsd1]
+    reps: [A,B]
+    mockname: mock
+    inputname: input
+    peak_tag: _peaks.bed
+Libraries:
+    chipseqtools: somepath/users/balter/chip-seq-analysis/chipseq
+    calc_fold: calc_fold.py
+    condor_submit_list: condor_submit_list.sh

@@ -1,0 +1,9 @@
+# macs2_bdg_fields
+1	#chr
+2	start
+3	stop
+4	name	#?
+5	score	# for display
+6	strand	# [.|+\-]
+7	-log10p
+awk -v ORS="\t" 'NR>1 && NR<9{print $2}' macs2_bdg_fields

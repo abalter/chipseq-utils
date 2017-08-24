@@ -1,0 +1,12 @@
+# macs2_broadPeak_fields
+1   #chr
+2   start
+3   stop
+4   name    #?
+5   score   #?
+6   strand  #[.|+\-]
+7   fold_change #raw?
+8   -log10p
+9   -log10q
+awk -v ORS="\t" 'NR>1 && NR<11{print $2}' macs2_broadPeak_fields
+
